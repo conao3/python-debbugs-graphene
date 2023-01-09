@@ -6,6 +6,7 @@ authors = ["yamashita-optarc <yamashita@optarc.net>"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
+graphene-pydantic = "^0.4.0"
 
 [tool.poetry.scripts]
 debbugs-graphene = "debbugs_graphene.cli:cli"
