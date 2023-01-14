@@ -1,4 +1,6 @@
 import jinja2
+import requests
+
 
 jinja_env = jinja2.Environment(autoescape=True)
 
@@ -27,8 +29,17 @@ xml = """\
 
 if __name__ == '__main__':
     template = jinja_env.from_string(xml)
-    print(
-        template.render({
-            'queries': ['package', 'emacs', 'severity', 'normal', 'severity', 'important', 'severity', 'serious']
-        })
+    request_body = template.render({
+        'queries': ['package', 'emacs', 'severity', 'normal', 'severity', 'important', 'severity', 'serious']
+    })
+    print(request_body)
+
+    res = requests.post(
+        'https://debbugs.gnu.org/cgi/soap.cgi',
+        data=request_body,
+        headers={
+            'Content-Type': 'text/xml; charset=utf-8',
+            'SOAPAction': 'SOAPAction: Debbugs/SOAP',
+        },
     )
+    print(res.text)
