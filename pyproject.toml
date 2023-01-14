@@ -8,6 +8,7 @@ authors = ["yamashita-optarc <yamashita@optarc.net>"]
 python = "^3.11"
 graphene-pydantic = { path = "./.vendor/graphene-pydantic" }
 Jinja2 = "^3.1.2"
+requests = "^2.28.2"
 
 [tool.poetry.scripts]
 debbugs-graphene = "debbugs_graphene.cli:cli"
