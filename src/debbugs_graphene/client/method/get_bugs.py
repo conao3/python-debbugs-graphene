@@ -46,7 +46,7 @@ if __name__ == '__main__':
     # )
     # print(res.text)
 
-    with open('tmp.conao3/get_status__res.xml', mode='r') as f:
+    with open('tmp.conao3/get_bugs__res.xml', mode='r') as f:
         res_text = f.read()
 
     root = ET.fromstring(res_text)
