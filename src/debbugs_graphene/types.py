@@ -47,3 +47,10 @@ class Bug(pydantic.BaseModel):
     # id: Any = None  # Integer Will vanish in future versions, use bug_num
     # found: Any = None  # Dict Not fully implemented in debbugs, use found_versions for now
     # fixed: Any = None  # Dict Not fully implemented in debbugs, use fixed_versions for now
+
+
+class BugLog(pydantic.BaseModel):
+    msg_num: Optional[int]
+    header: Optional[str] = None
+    body: Optional[str] = None
+    attachments: Optional[list[str]] = None
