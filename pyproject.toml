@@ -6,7 +6,7 @@ authors = ["yamashita-optarc <yamashita@optarc.net>"]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-graphene-pydantic = { path = "./.vendor/graphene-pydantic" }
+graphene-pydantic = "^0.4.0"
 Jinja2 = "^3.1.2"
 requests = "^2.28.2"
 
